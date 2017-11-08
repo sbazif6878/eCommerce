@@ -1,121 +1,77 @@
-
 <DOCTYPE html>
-
 <html>
-
     <head>
-
         <title> Syed Shop Online</title>
-
         <style>
-
         img {width:300px}
-
+            
         input {width:20px}
-
         </style>
 
         <script>
-
-                var quantity1 = document.getElementById("quantity1");
-
-                var quantity2 = document.getElementById("quantity2");
-
-                var quantity3 = document.getElementById("quantity3");
-
-                var quantity4 = document.getElementById("quantity4");
-
-
+            var quantity1 = document.getElementById("quantity1");
+            var quantity2 = document.getElementById("quantity2");
+            var quantity3 = document.getElementById("quantity3");
+            var quantity4 = document.getElementById("quantity4");
             function customerSubtotal(quantity1,quantity2,quantity3,quantity4){
-
-                var customerSubtotal = parseFloat(549.99)*parseInt(quantity1.value);
-
-                var customerSubtotal = parseFloat(199.99)*parseInt(quantity2.value);
-
-                var customerSubtotal = parseFloat(239.99)*parseInt(quantity3.value);
-
-                var customerSubtotal = parseFloat(189.99)*parseInt(quantity4.value);
-
+                var rprice1 = parseFloat(549.99)*parseInt(quantity1.value);
+                var rprice2 = parseFloat(199.99)*parseInt(quantity2.value);
+                var rprice3 = parseFloat(239.99)*parseInt(quantity3.value);
+                var rprice4 = parseFloat(189.99)*parseInt(quantity4.value);
+                customerSubtotal = rprice2 + rprice2 + rprice3 + rprice4;
+                var build +="";
+                var build += "Item#1: $549.99 Qty: " + quantity1 + "<br>";
+                var build += "Item#2: $199.99 Qty: " + quantity2 + "<br>";
+                var build += "Item#3: $239.99 Qty: " + quantity3 + "<br>";
+                var build += "Item#4: $189.99 Qty: " + quantity4 + "<br>";
+                var build += "-----------------------";
+                var build += "Customer Subtotal: " + customerSubtotal.value;
                 }
-
+            function CompanySubtotal(){
+                var wprice1 = parseFloat(400)*parseInt(quantity1.value);
+                var wprice1 = parseFloat(100)*parseInt(quantity2.value);
+                var wprice1 = parseFloat(200)*parseInt(quantity3.value);
+                var wprice1 = parseFloat(140)*parseInt(quantity4.value);
+                build+="";
         </script>
-
     </head>    
-
     <body>
-
+        
     <div>
-
         <h1> Sony - Alpha a5100 <br>
-
         Mirrorless Camera </h1>
-
         <img src="Sony - Alpha a5100 Mirrorless Camera with 16-50mm Retractable Lens - Black.jpg"><br>
-
         <span>$549.99</span>
-
         <p>Awesome CAMERA...won't <br>
-
         last one hurry.<br>Sony - Alpha a5100 Mirrorless <br>Camera with 16-50mm Retractable <br>Lens - Black</p>
-
         Quantity: <input id = "quantity1" type = "text" placeholder = "QTY" >        
-
     </div>
-
-    
-
+        
     <div>
-
         <h1> Apple TV </h1>
-
         <img src="Apple® TV (4th Generation) 32GB.jpg"><br>
-
         <span>$199.99</span>
-
         <p>Last one<br>
-
         better hurry.<br>4th Generation <br>32GB</p>
-
         Quantity: <input id = "quantity2" type = "text" placeholder = "QTY" >        
-
     </div>
-
-    
-
+        
     <div>
-
         <h1> HP 22-b016 All-in-One Desktop PC  </h1>
-
         <img src="HP 22-b016 All-in-One Desktop PC (Intel Pentium Processor, 4GB RAM Memory, 1TB Hard Drive), White.jpg"><br>
-
         <span>$239.99</span>
-
         <p>(Intel Pentium Processor,<br> 4GB RAM Memory, <br>1TB Hard Drive), <br>White.</p>
-
         Quantity: <input id = "quantity3" type = "text" placeholder = "QTY" >        
-
     </div>
 
     <div>
-
         <h1> Epson Expression Home XP-340 Printer </h1>
-
         <img src="Epson Expression Home XP-340 Wireless Small-In-One Printer.jpg"><br>
-
         <span>$189.99</span>
-
         <p>Wireless,<br> 4GB RAM Memory, <br> Small-In-One, <br>Black</p>
-
-        Quantity: <input id = "quantity4" type = "text" placeholder = "QTY" >        
-
+        Quantity: <input id = "quantity4" type = "text" placeholder = "QTY" >
     </div>
-
-    
-
     </body>
-
-    
-
 </html>
 
     
