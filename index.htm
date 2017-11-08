@@ -9,11 +9,11 @@
         </style>
 
         <script>
-            var quantity1 = document.getElementById("quantity1");
-            var quantity2 = document.getElementById("quantity2");
-            var quantity3 = document.getElementById("quantity3");
-            var quantity4 = document.getElementById("quantity4");
             function customerSubtotal(quantity1,quantity2,quantity3,quantity4){
+                var quantity1 = document.getElementById("quantity1");
+                var quantity2 = document.getElementById("quantity2");
+                var quantity3 = document.getElementById("quantity3");
+                var quantity4 = document.getElementById("quantity4");
                 var rprice1 = parseFloat(549.99)*parseInt(quantity1.value);
                 var rprice2 = parseFloat(199.99)*parseInt(quantity2.value);
                 var rprice3 = parseFloat(239.99)*parseInt(quantity3.value);
@@ -27,12 +27,22 @@
                 var build += "-----------------------";
                 var build += "Customer Subtotal: " + customerSubtotal.value;
                 }
-            function CompanySubtotal(){
-                var wprice1 = parseFloat(400)*parseInt(quantity1.value);
-                var wprice1 = parseFloat(100)*parseInt(quantity2.value);
-                var wprice1 = parseFloat(200)*parseInt(quantity3.value);
-                var wprice1 = parseFloat(140)*parseInt(quantity4.value);
+            function companySubtotal(){
+                var quantity1 = document.getElementById("quantity1");
+                var quantity2 = document.getElementById("quantity2");
+                var quantity3 = document.getElementById("quantity3");
+                var quantity4 = document.getElementById("quantity4");
+                var wprice1 = parseFloat(400);
+                var wprice2 = parseFloat(100);
+                var wprice3 = parseFloat(200);
+                var wprice4 = parseFloat(140);
+                var companySubtotal = (parseFloat(wprice1)*parseInt(quantity1.value)) + (parseFloat(wprice2)*parseInt(quantity2.value) + (parseFloat(wprice3)*parseInt(quantity3.value) +(parseFloat(wprice4)*parseInt(quantity4.value);
                 build+="";
+                build+="----------------------------" + "<br>";
+                build+="Whole Sale Item Price 1: " + wprice1 +"Qty: " + quantity1 + "<br>";
+                build+="Whole Sale Item Price 2: " + wprice2 +"Qty: " + quantity2 + "<br>";
+                build+="Whole Sale Item Price 3: " + wprice3 +"Qty: " + quantity3 + "<br>";
+                build+="Whole Sale Item Price 4: " + wprice4 +"Qty: " + quantity4 + "<br>";
                 
         </script>
     </head>    
