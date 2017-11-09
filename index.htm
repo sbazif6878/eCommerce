@@ -26,6 +26,7 @@
                 var build += "Item#4: $189.99 Qty: " + quantity4 + "<br>";
                 var build += "-----------------------";
                 var build += "Customer Subtotal: " + customerSubtotal.value;
+                output.innerHTML = build;
                 }
             function companySubtotal(){
                 var quantity1 = document.getElementById("quantity1");
@@ -45,9 +46,17 @@
                 build+="Whole Sale Item Price 4: " + wprice4 +"Qty: " + quantity4 + "<br>";
                 build+="---------------------";
                 build+="Company Subtotal: " + companySubtotal + "<br>";
+                output.innerHTML = build;
+                }
             function companyProfit(){
                 var companyProfit = customerSubtotall - companySubtotal;
                 build +="";
+                build +="------------------------"+ "<br>";
+                build +="Company Profit: " + companyProfit+ "<br>";
+                build +="------------------------"+ "<br>";
+                output.innerHTML = build; 
+                }
+            function                                                                                                                               
                                                                                                                                                          
                                                                                                                                           
                                                                                                                                           
