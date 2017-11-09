@@ -14,18 +14,19 @@
                 var quantity2 = document.getElementById("quantity2");
                 var quantity3 = document.getElementById("quantity3");
                 var quantity4 = document.getElementById("quantity4");
-                var rprice1 = parseFloat(549.99)*parseInt(quantity1.value);
-                var rprice2 = parseFloat(199.99)*parseInt(quantity2.value);
-                var rprice3 = parseFloat(239.99)*parseInt(quantity3.value);
-                var rprice4 = parseFloat(189.99)*parseInt(quantity4.value);
+				var ouput = document.getElementById("output")
+                var rprice1 = 549.99*parseInt(quantity1.value);
+                var rprice2 = 199.99*parseInt(quantity2.value);
+                var rprice3 = 239.99*parseInt(quantity3.value);
+                var rprice4 = 189.99*parseInt(quantity4.value);
                 customerSubtotal = rprice2 + rprice2 + rprice3 + rprice4;
-                var build +="";
-                var build += "Item#1: $549.99 Qty: " + quantity1 + "<br>";
-                var build += "Item#2: $199.99 Qty: " + quantity2 + "<br>";
-                var build += "Item#3: $239.99 Qty: " + quantity3 + "<br>";
-                var build += "Item#4: $189.99 Qty: " + quantity4 + "<br>";
-                var build += "-----------------------";
-                var build += "Customer Subtotal: " + customerSubtotal.value;
+                var build ="";
+                build += "Item#1: $549.99 Qty: " + quantity1 + "<br>";
+                build += "Item#2: $199.99 Qty: " + quantity2 + "<br>";
+                build += "Item#3: $239.99 Qty: " + quantity3 + "<br>";
+                build += "Item#4: $189.99 Qty: " + quantity4 + "<br>";
+                build += "-----------------------";
+                build += "Customer Subtotal: " + customerSubtotal.value;
                 output.innerHTML = build;
                 }
             function companySubtotal(){
@@ -33,13 +34,12 @@
                 var quantity2 = document.getElementById("quantity2");
                 var quantity3 = document.getElementById("quantity3");
                 var quantity4 = document.getElementById("quantity4");
-                var output = document.getElementById("output");
-                var wprice1 = parseFloat(400);
-                var wprice2 = parseFloat(100);
-                var wprice3 = parseFloat(200);
-                var wprice4 = parseFloat(140);
-                var companySubtotal = (parseFloat(wprice1)*parseInt(quantity1.value)) + (parseFloat(wprice2)*parseInt(quantity2.value) + (parseFloat(wprice3)*parseInt(quantity3.value) +(parseFloat(wprice4)*parseInt(quantity4.value);
-                build+="";
+                var wprice1 = 400;
+                var wprice2 = 100;
+                var wprice3 = 200;
+                var wprice4 = 140;
+                var companySubtotal = (wprice1*parseInt(quantity1.value)) + (wprice2*parseInt(quantity2.value)) + (wprice3*parseInt(quantity3.value)) +(wprice4*parseInt(quantity4.value));
+                var build="";
                 build+="------------------------------------------" + "<br>";
                 build+="Whole Sale Item Price 1: " + wprice1 +"Qty: " + quantity1 + "<br>";
                 build+="Whole Sale Item Price 2: " + wprice2 +"Qty: " + quantity2 + "<br>";
@@ -50,8 +50,8 @@
                 output.innerHTML = build;
                 }
             function companyProfit(){
-                var companyProfit = customerSubtotall - companySubtotal;
-                build +="";
+                var companyProfit = customerSubtotal - companySubtotal;
+                var build ="";
                 build +="------------------------"+ "<br>";
                 build +="Company Profit: " + companyProfit+ "<br>";
                 build +="------------------------"+ "<br>";
@@ -59,13 +59,13 @@
                 }
             function totalItemsSold(){
                 var totalItemsSold = quantity1+quantity2+quantity3+quantity4;
-                build +="";                                                                       
+                var build ="";                                                                       
                 build +="------------------------"+ "<br>";
                 build +="Total Items Sold: " + totalItemsSold+ "<br>";
                 build +="------------------------"+ "<br>";
                 output.innerHTML = build;
                 }                                                                         
-            function totalTax(){                    
+                   
         </script>
     </head>    
     <body>
@@ -96,7 +96,6 @@
         <p>(Intel Pentium Processor,<br> 4GB RAM Memory, <br>1TB Hard Drive), <br>White.</p>
         Quantity: <input id = "quantity3" type = "text" placeholder = "QTY" >        
     </div>
-
     <div>
         <h1> Epson Expression Home XP-340 Printer </h1>
         <img src="Epson Expression Home XP-340 Wireless Small-In-One Printer.jpg"><br>
@@ -108,6 +107,3 @@
     <div id = "output"></div>
     </body>
 </html>
-
-    
-
