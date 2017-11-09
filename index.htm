@@ -15,19 +15,20 @@
                 var quantity3 = document.getElementById("quantity3");
                 var quantity4 = document.getElementById("quantity4");
 				var ouput = document.getElementById("output")
-                var rprice1 = 549.99*parseInt(quantity1.value);
-                var rprice2 = 199.99*parseInt(quantity2.value);
-                var rprice3 = 239.99*parseInt(quantity3.value);
-                var rprice4 = 189.99*parseInt(quantity4.value);
-                customerSubtotal = rprice2 + rprice2 + rprice3 + rprice4;
+                var rprice1 = 549.99;
+                var rprice2 = 199.99;
+                var rprice3 = 239.99;
+                var rprice4 = 189.99;
+                customerSubtotal = rprice1*parseInt(quantity1.value) + rprice2*parseInt(quantity2.value) + rprice3*parseInt(quantity3.value) + rprice4*parseInt(quantity4.value);
                 var build ="";
-                build += "Item#1: $549.99 Qty: " + quantity1 + "<br>";
-                build += "Item#2: $199.99 Qty: " + quantity2 + "<br>";
-                build += "Item#3: $239.99 Qty: " + quantity3 + "<br>";
-                build += "Item#4: $189.99 Qty: " + quantity4 + "<br>";
+                build += "Item#1: $549.99 Qty: " + quantity1.value + "<br>";
+                build += "Item#2: $199.99 Qty: " + quantity2.value + "<br>";
+                build += "Item#3: $239.99 Qty: " + quantity3.value + "<br>";
+                build += "Item#4: $189.99 Qty: " + quantity4.value + "<br>";
                 build += "-----------------------"+ "<br>";
                 build += "Customer Subtotal: " + customerSubtotal.value;
                 output.innerHTML = build;
+				companySubtotal();
                 }
             function companySubtotal(){
                 var quantity1 = document.getElementById("quantity1");
@@ -41,10 +42,10 @@
                 var companySubtotal = (wprice1*parseInt(quantity1.value)) + (wprice2*parseInt(quantity2.value)) + (wprice3*parseInt(quantity3.value)) +(wprice4*parseInt(quantity4.value));
                 var build="";
                 build+="------------------------------------------" + "<br>";
-                build+="Whole Sale Item Price 1: " + wprice1 +"Qty: " + quantity1 + "<br>";
-                build+="Whole Sale Item Price 2: " + wprice2 +"Qty: " + quantity2 + "<br>";
-                build+="Whole Sale Item Price 3: " + wprice3 +"Qty: " + quantity3 + "<br>";
-                build+="Whole Sale Item Price 4: " + wprice4 +"Qty: " + quantity4 + "<br>";
+                build+="Whole Sale Item Price 1: " + wprice1 +"Qty: " + quantity1.value + "<br>";
+                build+="Whole Sale Item Price 2: " + wprice2 +"Qty: " + quantity2.value + "<br>";
+                build+="Whole Sale Item Price 3: " + wprice3 +"Qty: " + quantity3.value + "<br>";
+                build+="Whole Sale Item Price 4: " + wprice4 +"Qty: " + quantity4.value + "<br>";
                 build+="---------------------";
                 build+="Company Subtotal: " + companySubtotal + "<br>";
                 output.innerHTML = build;
@@ -64,7 +65,8 @@
                 build +="Total Items Sold: " + totalItemsSold+ "<br>";
                 build +="------------------------"+ "<br>";
                 output.innerHTML = build;
-                }                                                                         
+                }
+					
                    
         </script>
     </head>    
