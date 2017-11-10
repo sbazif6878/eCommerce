@@ -3,9 +3,10 @@
     <head>
         <title> Syed Shop Online</title>
         <style>
-        img {width:300px}
-            
+        img {width:300px}  
+		img {lenth:200px}
         input {width:20px}
+		input {lenth:20px}
         </style>
 
         <script>
@@ -14,22 +15,22 @@
                 var quantity2 = document.getElementById("quantity2");
                 var quantity3 = document.getElementById("quantity3");
                 var quantity4 = document.getElementById("quantity4");
-				var ouput = document.getElementById("output")
-                var rprice1 = 549.99;
+                var output = document.getElementById("output");
+				var rprice1 = 549.99;
                 var rprice2 = 199.99;
                 var rprice3 = 239.99;
                 var rprice4 = 189.99;
-                customerSubtotal = rprice1*parseInt(quantity1.value) + rprice2*parseInt(quantity2.value) + rprice3*parseInt(quantity3.value) + rprice4*parseInt(quantity4.value);
+                customerSubtotal = rprice1*parseInt(quantity1.value) + rprice2*parseInt(quantity2.value) + rprice3*parseInt(quantity3.value)+ rprice4*parseInt(quantity4.value);
                 var build ="";
-                build += "Item#1: $549.99 Qty: " + quantity1.value + "<br>";
-                build += "Item#2: $199.99 Qty: " + quantity2.value + "<br>";
-                build += "Item#3: $239.99 Qty: " + quantity3.value + "<br>";
-                build += "Item#4: $189.99 Qty: " + quantity4.value + "<br>";
-                build += "-----------------------"+ "<br>";
+                build += "Item#1: " + rprice1.value + "Qty: " + quantity1.value + "<br>";
+                build += "Item#2: " + rprice2.value + "Qty: " + quantity2.value + "<br>";
+                build += "Item#3: " + rprice3.value + "Qty: " + quantity3.value + "<br>";
+                build += "Item#4: " + rprice4.value + "Qty: " + quantity4.value + "<br>";
+                build += "---------------------------------" + "<br>";
                 build += "Customer Subtotal: " + customerSubtotal.value;
                 output.innerHTML = build;
-				companySubtotal();
-                }
+                companySubtotal();
+				}
             function companySubtotal(){
                 var quantity1 = document.getElementById("quantity1");
                 var quantity2 = document.getElementById("quantity2");
@@ -42,40 +43,88 @@
                 var companySubtotal = (wprice1*parseInt(quantity1.value)) + (wprice2*parseInt(quantity2.value)) + (wprice3*parseInt(quantity3.value)) +(wprice4*parseInt(quantity4.value));
                 var build="";
                 build+="------------------------------------------" + "<br>";
-                build+="Whole Sale Item Price 1: " + wprice1 +"Qty: " + quantity1.value + "<br>";
-                build+="Whole Sale Item Price 2: " + wprice2 +"Qty: " + quantity2.value + "<br>";
-                build+="Whole Sale Item Price 3: " + wprice3 +"Qty: " + quantity3.value + "<br>";
-                build+="Whole Sale Item Price 4: " + wprice4 +"Qty: " + quantity4.value + "<br>";
+                build+="Whole Sale Item Price 1: $" + wprice1.value +"Qty: " + quantity1.value + "<br>";
+                build+="Whole Sale Item Price 2: $" + wprice2.value +"Qty: " + quantity2.value + "<br>";
+                build+="Whole Sale Item Price 3: $" + wprice3.value +"Qty: " + quantity3.value + "<br>";
+                build+="Whole Sale Item Price 4: $" + wprice4.value +"Qty: " + quantity4.value + "<br>";
                 build+="---------------------";
-                build+="Company Subtotal: " + companySubtotal + "<br>";
+                build+="Company Subtotal: " + companySubtotal.value + "<br>";
                 output.innerHTML = build;
+				var output = document.getElementById("output");
+				companySubtotal();
                 }
             function companyProfit(){
                 var companyProfit = customerSubtotal - companySubtotal;
                 var build ="";
                 build +="------------------------"+ "<br>";
-                build +="Company Profit: " + companyProfit+ "<br>";
+                build +="Company Profit: " + companyProfit.value + "<br>";
                 build +="------------------------"+ "<br>";
                 output.innerHTML = build; 
+				var output = document.getElementById("output");
+				companyProfit();
                 }
             function totalItemsSold(){
                 var totalItemsSold = quantity1+quantity2+quantity3+quantity4;
                 var build ="";                                                                       
                 build +="------------------------"+ "<br>";
-                build +="Total Items Sold: " + totalItemsSold+ "<br>";
+                build +="Total Items Sold: " + totalItemsSold.value + "<br>";
                 build +="------------------------"+ "<br>";
                 output.innerHTML = build;
+				var output = document.getElementById("output");
+				totalItemSold();
                 }
-					
-                   
+			function tax(){
+				var tax = customerSubtotal*0.0875
+				var build = "";
+				build+="------------------------"+ "<br>";
+				build +="Tax: "+ tax.value + "<br>";
+				build+="----------------"+ "<br>";
+				output.innerHTML = build;
+				var output = document.getElementById("output");
+				tax();
+				}
+			function shipping(){
+				if(customerSubtotal<=100){
+					shipping = 25;
+					var build = "";
+					build += "Shipping: 25"+"<br>";
+					}
+				else if(customerSubtotal<=200){
+					shipping = 10;
+					var build = "";
+					build += "Shipping: 10"+"<br>";
+					}
+				else{
+					shipping = 0;
+					var build = "";
+					build += "Shipping: free"+"<br>";
+					}
+				output.innerHTML = build;
+				var output = document.getElementById("output");
+				shipping();
+			function total(){
+				total = customerSubtotal + tax + shipping;
+				var build = "";
+				build += "-------------------"+"<br>";
+				build += "Total: " + total+ "<br>";
+				output.innerHTML = build;
+				var output = document.getElementById("output");
+				total();
+				}
         </script>
     </head>    
-    <body>
+    <body style="background-color:gray;">
+		<ul>
+			<li><a href="default.asp">Home</a></li>
+			<li><a href="news.asp">News</a></li>
+			<li><a href="contact.asp">Contact</a></li>
+			<li><a href="about.asp">About</a></li>
+		</ul>
         
     <div>
         <h1> Sony - Alpha a5100 <br>
         Mirrorless Camera </h1>
-        <img src="Sony - Alpha a5100 Mirrorless Camera with 16-50mm Retractable Lens - Black.jpg"><br>
+        <img src="https://www.camerasky.com.au/media/catalog/product/cache/11/thumbnail/600x/17f82f742ffe127f42dca9de82fb58b1/i/m/img_362556.jpg"><br>
         <span>$549.99</span>
         <p>Awesome CAMERA...won't <br>
         last one hurry.<br>Sony - Alpha a5100 Mirrorless <br>Camera with 16-50mm Retractable <br>Lens - Black</p>
@@ -84,7 +133,7 @@
         
     <div>
         <h1> Apple TV </h1>
-        <img src="Apple® TV (4th Generation) 32GB.jpg"><br>
+        <img src="http://zdnet2.cbsistatic.com/hub/i/r/2015/10/30/68395660-2a28-4c21-9118-6ea3c597b91b/resize/1170x878/ad6ebd145810b4fd76695b5d4617934f/2015-10-30-12-11-13.jpg"><br>
         <span>$199.99</span>
         <p>Last one<br>
         better hurry.<br>4th Generation <br>32GB</p>
@@ -93,14 +142,14 @@
         
     <div>
         <h1> HP 22-b016 All-in-One Desktop PC  </h1>
-        <img src="HP 22-b016 All-in-One Desktop PC (Intel Pentium Processor, 4GB RAM Memory, 1TB Hard Drive), White.jpg"><br>
+        <img src="https://www.staples-3p.com/s7/is/image/Staples/s1023742_sc7?$splssku$"><br>
         <span>$239.99</span>
         <p>(Intel Pentium Processor,<br> 4GB RAM Memory, <br>1TB Hard Drive), <br>White.</p>
         Quantity: <input id = "quantity3" type = "text" placeholder = "QTY" >        
     </div>
     <div>
         <h1> Epson Expression Home XP-340 Printer </h1>
-        <img src="Epson Expression Home XP-340 Wireless Small-In-One Printer.jpg"><br>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/81LJZK50sjL._SL1500_.jpg"><br>
         <span>$189.99</span>
         <p>Wireless,<br> 4GB RAM Memory, <br> Small-In-One, <br>Black</p>
         Quantity: <input id = "quantity4" type = "text" placeholder = "QTY" >
@@ -109,3 +158,4 @@
     <div id = "output"></div>
     </body>
 </html>
+
